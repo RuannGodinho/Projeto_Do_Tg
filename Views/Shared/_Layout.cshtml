@@ -1,0 +1,135 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RGR</title>
+    <link rel="stylesheet" href="../css/_Main.css"/> 
+    
+    <link rel="stylesheet" href="~/MVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    
+    <script src="https://kit.fontawesome.com/1788d3ed3e.js" crossorigin="anonymous"></script>
+    
+</head>
+
+
+<body>
+    
+    <header>
+        
+        @* <div id="icones">
+            
+                    <i class="fa-solid fa-user fa-3x" id="usuarioIcon" style="font-size: 30pt"><p id="subtitulo1">Entrar</p></i>
+                    <i class="fa-solid fa-cart-shopping fa-3x" id="carrinhoIcon" style="font-size: 30pt;"><P id="subtitulo2">Carrinho</P></i>
+                      
+                </div> *@
+
+       @* <form class="d-flex" role="search">
+                    <input class="barra" type="search" placeholder="Digite aqui..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" id="botao-busca"><i class="fa-solid fa-magnifying-glass"></i></button>             
+                </form>  *@
+
+            <img src="~/css/RGR3.png" alt="" class="logo">
+            <table>
+                <tr>
+                    <td><img class="user" src="~/css/user-bege.png" ></td>
+                    <td></td>
+                    <td><img class="loupe-blue" src="~/css/cart-bege.png"></td>
+                    </tr>
+                <tr>
+                        <td id="sub">Entrar</td>
+                        <td></td>
+                        <td id="sub">Carrinho</td>      
+                </tr>       
+            </table>
+
+            <div class="search-box">
+            <input type="text" class="search-text" placeholder="Pesquisar...">
+            <a class="search-btn">
+                <img class="loupe-blue" src="../css/loupe-blue.svg" alt="" width="25px" height="25px">
+                <img class="loupe-white" src="../css/loupe-white.svg" alt="" width="25px" height="25px">
+            </a>
+        </div>
+                
+
+
+        @* <div class="container" id="trabalhos">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Nossos trabalhos</a>
+        </div> *@
+ 
+                  
+        @* <nav class="navbar navbar-expand-sm  navbar-light  mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RGR</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" id="barra-nav">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contato" asp-action="Index">Contatos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Porta" asp-action="Index">Portas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Janela" asp-action="Index">Janelas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Fechadura" asp-action="Index">Fechaduras</a>
+                        </li>
+                    </ul>
+                </div>                   
+            </div>
+        </nav> *@
+
+<br><br><br><br><br><br>
+        <nav>
+            
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list" >
+                <li><a href="/">Portas</a></li>
+                <li><a href="/">Guarnições</a></li>
+                <li><a href="/">Janelas</a></li>
+                <li><a href="/">Fechaduras</a></li>
+                <li><a href="/">Outros</a></li>
+
+            </ul>
+        </nav>
+        </header>
+        
+    
+  
+    <div class="container">
+       
+            @RenderBody()
+        
+    </div>
+
+
+   
+<footer>
+            Esquadrias@gmail.com
+    </footer>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+    
+    <script src="../css/mobile-navbar.js"></script>
+</body>
+</html>

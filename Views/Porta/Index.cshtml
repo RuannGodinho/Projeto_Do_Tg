@@ -1,0 +1,63 @@
+@model IEnumerable<MVC.Models.Porta>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RGR</title>
+    
+    <link rel="stylesheet" href="../css/_Main.css"/> 
+    <link rel="stylesheet" href="~/MVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/1788d3ed3e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+       
+                  
+        
+    </header>
+
+    <div class="container">
+        @foreach (var item in Model)
+        {
+        <div class="card" id="card_carrinhos">
+            <div class="card__left">
+            <span>
+                @Html.DisplayFor(model => item.Nome)
+            </span>
+            <h2>
+                @Html.DisplayFor(model => item.Descricao)
+            </h2>
+            <span id="preco">
+                R$ @Html.DisplayFor(model => item.Valor)
+            </span>
+            
+            <button type="button" class="btn btn-success" id="botao-comprar"  onclick(troca_src(1);>Adicionar ao carrinho</button>
+            </div>
+
+            <div class="card__right">
+                @if(item.Id == 1)
+                {
+                    <a><img class="Imagem_Porta" src="~/css/Porta.jpeg" width="200px"></a>
+                }
+                else if(item.Id == 2)
+                {
+                    <a><img class="Imagem_Porta" src="~/css/PortaNigga.jpeg" width=></a>                    
+                }
+                else if(item.Id == 3)
+                {
+                   <a><img class="Imagem_Porta" src="~/css/PortaMacica.jpeg" width="200px"></a> 
+                }
+
+            </div>
+        </div>
+        }
+    </div>
+    <br><br><br><br><br><br><br>
+            
+</body>
