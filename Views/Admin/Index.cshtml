@@ -1,0 +1,91 @@
+@{
+    ViewData["Title"] = "Admin Page";
+    Layout = null;
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RGR</title>
+
+    <link rel="stylesheet" href="../css/_Main.css"/> 
+    <link rel="stylesheet" href="~/MVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/1788d3ed3e.js" crossorigin="anonymous"></script>
+    <style>
+        .jumbotron
+        {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 2%;
+            width: auto;
+            height: 100%;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <div id="icones">
+
+                    <a asp-controller="Usuario" asp-action="Index"><i class="fa-solid fa-user fa-3x" id="usuarioIcon"></i></a>
+                    <a asp-controller="Carrinho" asp-action="Index"><i class="fa-solid fa-cart-shopping fa-3x" id="carrinhoIcon"></i></a>
+                </div>
+
+        <form class="d-flex" role="search">
+                    <input class="barra" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" id="botao-busca">Search</button> 
+
+
+                </form>
+
+        <div class="container">
+
+
+        </div>
+
+        <div class="container" id="trabalhos">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Nossos trabalhos<img src="~/css/mala.png" alt=""></a>
+        </div>
+
+
+        <div class="container">
+
+        </div>
+
+
+        <nav class="navbar navbar-expand-sm  navbar-light  mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RGR</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" id="barra-nav">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Contatos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Porta">Portas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Janela">Janelas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Fechadura">Fechaduras</a>
+                        </li>
+                    </ul>
+                </div>                   
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="jumbotron">
+            <header><center><h1>Bem vindo Administrador</h1></center></header>
+        </div>
+    </div>
+</body>

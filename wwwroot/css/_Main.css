@@ -215,6 +215,11 @@ footer {
   
 }
 
+#Texto_Carrinho{
+  text-decoration: none;
+  color: #E8DABF;
+}
+
 /* Barra principal */
 nav {
   display: flex;
@@ -312,7 +317,7 @@ nav {
 
 .search-box:hover > .search-btn .loupe-blue{
   display: none;
-  
+  text-decoration: none;
 }
 
 .search-box:hover > .search-btn .loupe-white{

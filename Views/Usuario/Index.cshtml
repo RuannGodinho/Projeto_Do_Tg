@@ -1,0 +1,27 @@
+@model MVC.Models.Login;
+@{
+    ViewData["Title"] = "Tela de login";
+}
+
+<div class="container container-xl">
+    <div class="jumbotron">
+        <center><h2 id="listagemTitulo">Faça login</h2></center>
+        <form class="container" asp-controller="Usuario" asp-action="Entrar">
+            <div class="form-group" asp-controller="Usuario">
+                <label>Email:</label>
+                <input type="text" asp-for="email" class="form-control">
+                @Html.ValidationMessageFor(x => x.email)
+            </div>
+            <div class="form-group">
+                <label>Senha:</label>
+                <input type="password" asp-for="senha" class="form-control">
+                @Html.ValidationMessageFor(x => x.senha)
+            </div>
+
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+        <br>
+
+        <a class="btn btn-primary" asp-controller="Usuario" asp-action="Cadastrar">Criar conta</a>
+    </div>
+</div>

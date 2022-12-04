@@ -18,5 +18,6 @@ namespace MVC.Context
         public DbSet<Porta> Portas{get;set;}  
         public DbSet<Janela> Janelas{get;set;}
         public DbSet<Fechadura> Fechaduras{get;set;}
+        public DbSet<Usuario> Usuario{get;set;}
     }
 }

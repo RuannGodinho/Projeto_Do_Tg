@@ -1,0 +1,43 @@
+@model MVC.Models.Usuario;
+@{
+    ViewData["Title"] = "Tela de Cadastro";
+    //Layout = null;
+}
+
+<div class="container container-xl">
+    <div class="jumbotron">
+        <form class="container" asp-controller="Usuario" asp-action="Cadastrar" method="post">
+            <input type="hidden" asp-for="eAdmin" value="false">
+
+            <div class="form-group">
+                <label>Nome completo:</label>
+                <input type="text" class="form-control" asp-for="nome">
+            </div>
+
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="text" class="form-control" asp-for="email">
+            </div>
+
+            <div class="form-group">
+                <label>Endereço:</label>
+                <input type="text" class="form-control" asp-for="endereco">
+            </div>
+
+            <div class="form-group">
+                <label>Senha:</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Confirme a Senha:</label>
+                <input type="text" class="form-control" asp-for="senha">
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-primary">Criar conta</button>
+        </form>
+        <br>
+
+    </div>
+</div>

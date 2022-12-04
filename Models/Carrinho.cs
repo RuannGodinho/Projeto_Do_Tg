@@ -8,9 +8,11 @@ namespace MVC.Models
     public class Carrinho
     {
         public string idPedido {get; set;}
+        public Nullable<long> Id {get; set;}
         public string nomePedido {get; set;}
         public string descricao {get; set;}
         public int qtdPedido {get; set;}
         public double precoPedido {get; set;}
+        public long idUsuario {get; set;}
     }
 }
