@@ -25,6 +25,18 @@
     <div class="container">
         @foreach (var item in Model)
         {
+            var classeQtd = "";
+
+            if(item.Id == 1)
+                classeQtd = "campoQuantidade";
+
+            else if(item.Id == 2)
+                classeQtd = "campoQuantidade2";
+
+            else if(item.Id == 3)
+                classeQtd = "campoQuantidade3";
+
+
         <div class="card" id="card_carrinhos">
             <div class="card__left">
             <span>
@@ -36,8 +48,15 @@
             <span id="preco">
                 R$ @Html.DisplayFor(model => item.Valor)
             </span>
+            <select class="@classeQtd">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
             
-            <button type="button" class="btn btn-success botao-comprar" onclick=troca_src()>Adicionar ao carrinho</button>
+            <button type="button" class="btn btn-success botao-comprar" onclick=troca_src(@item.Id)>Adicionar ao carrinho</button>
             </div>
 
             <div class="card__right">
@@ -64,10 +83,18 @@
 </body>
 
 <script>
-    function troca_src(){
+    function troca_src(idProduto){
+        var tipoTabela = 1;
+        var qtdProdutos = idProduto == 1 ? $(".campoQuantidade").val() : idProduto == 2 ? $(".campoQuantidade2").val() : $(".campoQuantidade3").val();
+
     $.ajax({
-        url:"/Carrinho/Index",
-        type: 'GET',   
+        url:"/Carrinho/SalvarNoCarrinho",
+        type: 'Post',
+        data:{
+            idProduto,
+            tipoTabela,
+            qtdProdutos
+        },   
     success: function(result){
         window.location.href = "@Url.Action("Index", "Carrinho")";
     }});

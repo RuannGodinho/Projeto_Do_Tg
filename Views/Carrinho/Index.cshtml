@@ -1,3 +1,4 @@
+@model IEnumerable<Carrinho>;
 @{
     ViewData["Title"] = "Listagem de Pedidos";
     //Layout = null;
@@ -37,16 +38,35 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach (var item in Model)
+                {
                 <tr>
-                    <td scope="col">1</td>
-                    <td scope="col">Porta</td>
-                    <td scope="col">sadasdsaddddddddddddddddddsdadsdada</td>
-                    <td scope="col">2</td>
-                    <td scope="col">R$ 90,00</td>
+                    <td scope="col">@item.Id</td>
+                    <td scope="col">@item.nomePedido</td>
+                    <td scope="col">@item.descricao</td>
+                    <td scope="col">@item.qtdPedido</td>
+                    <td scope="col">@item.precoPedido</td>
                     <td scope="col"><a class="btn btn-primary">Editar</a></td>
-                    <td scope="col"><a class="btn btn-danger">Cancelar</a></td>
+                    <td scope="col"><a class="btn btn-danger" onclick="cancelaItem(@item.Id)">Cancelar</a></td>
                 </tr>
+                }
             </tbody>
         </table>
     </div>
 </div>
+
+<script>
+    function cancelaItem(idProduto){
+        debugger;
+    $.ajax({
+        url:"/Carrinho/Deletar",
+        type: 'Put',
+        data:{
+            idProduto
+        },   
+    success: function(result){
+        debugger;
+        window.location.href = "@Url.Action("Index", "Carrinho")";
+    }});
+}
+</script>

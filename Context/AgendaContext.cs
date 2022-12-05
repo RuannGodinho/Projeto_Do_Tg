@@ -19,5 +19,6 @@ namespace MVC.Context
         public DbSet<Janela> Janelas{get;set;}
         public DbSet<Fechadura> Fechaduras{get;set;}
         public DbSet<Usuario> Usuario{get;set;}
+        public DbSet<Carrinho> Carrinho{get;set;}
     }
 }

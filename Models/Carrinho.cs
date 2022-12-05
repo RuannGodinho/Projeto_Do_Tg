@@ -12,7 +12,7 @@ namespace MVC.Models
         public string nomePedido {get; set;}
         public string descricao {get; set;}
         public int qtdPedido {get; set;}
-        public double precoPedido {get; set;}
+        public decimal precoPedido {get; set;}
         public long idUsuario {get; set;}
     }
 }

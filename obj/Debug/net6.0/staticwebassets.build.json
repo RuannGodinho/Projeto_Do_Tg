@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/1nK3LOwnAdeICP+rpeLpXmhI6HaKL0bJVOyv39dNYk=",
+  "Hash": "ffvOG76dBEO2Y5eQPZabPJ7nbBUiVXryfWkqVf6SCrk=",
   "Source": "MVC",
   "BasePath": "_content/MVC",
   "Mode": "Default",
@@ -219,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\PortaNigga.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\wwwroot\\css\\rgr-otimizado.png",
+      "SourceId": "MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\wwwroot\\",
+      "BasePath": "_content/MVC",
+      "RelativePath": "css/rgr-otimizado.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\rgr-otimizado.png"
     },
     {
       "Identity": "C:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\wwwroot\\css\\RGR3.png",
