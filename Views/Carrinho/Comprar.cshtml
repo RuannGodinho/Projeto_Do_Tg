@@ -1,0 +1,52 @@
+@model Carrinho;
+@{
+    ViewData["Title"] = "Listagem de Pedidos";
+    //Layout = null;
+    var totalPagar = 0;
+}
+
+<style>
+    p{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .jumbotron{
+        width: 100%;
+        height: 60%;
+        background: rgba(232, 218, 191, 0.9);
+        text-align: center;
+    }
+
+    table{
+        width: 100%;
+        text-align: center;
+    }
+</style>       
+
+<div class="container container-xl">
+
+    <div class="jumbotron" >
+        <center><h2 id="listagemTitulo">Finalizar Compra</h2></center>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <img src="~/css/QrCode.jpg" class="QrCode">
+
+                <tr>
+                    <td>@Model.qtdPedido</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="11"><a class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Para comprar escaneie o Qr Code e pague o valor informado" onclick="comprarItem(@totalPagar)">Comprar</a></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

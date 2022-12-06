@@ -69,6 +69,15 @@ namespace MVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult Comprar(int totalPagar)
+        {
+            var pedido = new Models.Carrinho{
+                qtdPedido = totalPagar
+            };
+
+            return View(pedido);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

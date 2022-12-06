@@ -1,4 +1,4 @@
-@model IEnumerable<MVC.Models.Porta>
+@model IEnumerable<MVC.Models.Guarnicao>
 @{
     ViewData["Title"] = "Index";
 }
@@ -46,7 +46,7 @@
                 @Html.DisplayFor(model => item.Descricao)
             </h2>
             <span id="preco">
-                R$ @Html.DisplayFor(model => item.Valor)
+                R$ @Html.DisplayFor(model => item.Preco)
             </span>
             <select class="@classeQtd">
                 <option value="1">1</option>
@@ -62,7 +62,7 @@
             <div class="card__right">
                 @if(item.Id == 1)
                 {
-                    <a><img class="Imagem_Porta" src="~/css/Porta.jpeg" width="200px"></a>
+                    <a><img class="Imagem_Porta" src="~/css/Guarnicao_Angelim.jpg" width="200px"></a>
                 }
                 else if(item.Id == 2)
                 {
@@ -71,18 +71,6 @@
                 else if(item.Id == 3)
                 {
                    <a><img class="Imagem_Porta" src="~/css/PortaMacica.jpeg" width="200px"></a> 
-                }
-                else if(item.Id == 4)
-                {
-                   <a><img class="Imagem_Porta" src="~/css/PortaMacica.jpeg" width="200px"></a> 
-                }
-                else if(item.Id == 5)
-                {
-                   <a><img class="Imagem_Porta" src="~/css/Porta.jpeg" width="200px"></a> 
-                }
-                else if(item.Id == 6)
-                {
-                   <a><img class="Imagem_Porta" src="~/css/PortaNigga.jpeg" width="200px"></a> 
                 }
 
             </div>
@@ -96,7 +84,7 @@
 
 <script>
     function troca_src(idProduto){
-        var tipoTabela = 1;
+        var tipoTabela = 2;
         var qtdProdutos = idProduto == 1 ? $(".campoQuantidade").val() : idProduto == 2 ? $(".campoQuantidade2").val() : $(".campoQuantidade3").val();
 
     $.ajax({

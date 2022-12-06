@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Listagem de Pedidos";
     //Layout = null;
+    var totalPagar = 0;
 }
 
 <style>
@@ -20,9 +21,10 @@
         width: 100%;
         text-align: center;
     }
-</style>
+</style>       
 
 <div class="container container-xl">
+
     <div class="jumbotron">
         <center><h2 id="listagemTitulo">Seus Pedidos</h2></center>
         <table>
@@ -38,8 +40,11 @@
                 </tr>
             </thead>
             <tbody>
+
+
                 @foreach (var item in Model)
                 {
+                    totalPagar = totalPagar + (int)@item.precoPedido;
                 <tr>
                     <td scope="col">@item.Id</td>
                     <td scope="col">@item.nomePedido</td>
@@ -51,6 +56,11 @@
                 </tr>
                 }
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="11"><a class="btn btn-success" onclick="comprarItem(@totalPagar)">Comprar</a></td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </div>
@@ -67,6 +77,20 @@
     success: function(result){
         debugger;
         window.location.href = "@Url.Action("Index", "Carrinho")";
+    }});
+}
+
+function comprarItem(totalPagar){
+        debugger;
+    $.ajax({
+        url:"/Carrinho/Comprar",
+        type: 'Put',
+        data:{
+            totalPagar
+        },   
+    success: function(result){
+        debugger;
+        window.location.href = "@Url.Action("Comprar", "Carrinho")";
     }});
 }
 </script>

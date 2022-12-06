@@ -326,6 +326,25 @@ nav {
 
 }
 
+.card{
+  position: absolute;
+  float: left;
+  align-items: center;
+  margin: 20px;
+
+}
+
+/* Icone QrCode ---------------------------------------*/
+.QrCode{
+  text-align: center;
+  height: 300px;
+  weight: 300px;
+}
+
+.form-group{
+  width: 100%;
+}
+
 
 /* Icones de carrinho e login ---------------------------------------------*/
 
@@ -386,7 +405,7 @@ td{
   }
 
   footer {
-    position: absolute;
+    position: relative;
     bottom: 0px;
     background-color: #004C40;
     color: #FFF;
