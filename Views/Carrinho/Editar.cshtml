@@ -1,0 +1,33 @@
+@model MVC.Models.Carrinho;
+
+<div class="container container-xl">
+    <div class="jumbotron">
+        <center><h2 id="listagemTitulo">Editar pedido</h2></center>
+        <form class="container" asp-controller="Carrinho" asp-action="Alterar" method="post">
+          <input type="hidden" asp-for="Id">
+
+          <div class="form-group">
+            <label>Nome Item: </label>
+            <input type="text" class="form-control" asp-for="nomePedido" placeholder="Escreva o nome do produto aqui">
+          </div>
+
+          <div class="form-group">
+            <label>Descrição do Item: </label>
+            <input type="text" class="form-control" asp-for="descricao">
+          </div>
+
+          <div class="form-group">
+            <label>Quantidade do Item: </label>
+            <input type="number" class="form-control" asp-for="qtdPedido">
+          </div>
+
+          <div class="form-group">
+            <label>Preço do Item: </label>
+            <input type="text" class="form-control" asp-for="precoPedido">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: 5px;">Salvar alterações</button>
+          <button asp-controller="Carrinho" asp-action="Index" class="btn btn-danger" style="margin-top: 5px;">Voltar</button>
+        </form>
+    </div>
+</div>

@@ -1,7 +1,6 @@
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-
+@model IEnumerable<MVC.Models.Janela>;
 @{
-    ViewData["Title"] = "Admin Page";
+    ViewData["Title"] = "Admin Page - Porta";
     Layout = null;
 }
 <head>
@@ -16,10 +15,22 @@
     <style>
         .jumbotron
         {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 2%;
+            background-color: rgba(70, 43, 14, 0.8);
+            border-radius: 10px;
+            border-color: white;
+            border-style: solid;
+            border-width: 2px;
             width: auto;
             height: 100%;
+        }
+        
+        table
+        {
+            border-bottom: 1px solid white;
+        }
+        td
+        {
+            color: White;
         }
     </style>
 </head>
@@ -86,8 +97,37 @@
     </header>
 
     <div class="container">
+        <a class="btn btn-primary" style="float: right;margin-top: 5px;margin-right: 5px;" asp-controller="admin" asp-action="AdicionarJanela">Adicionar</a>
         <div class="jumbotron">
-            <header><center><h1>Bem vindo Administrador</h1></center></header>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Nome</td>
+                        <td>Medida</td>
+                        <td>Cor</td>
+                        <td>Preço</td>
+                        <td>Descrição</td>
+                        <td>Estoque</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@Html.DisplayFor(Model => item.Id)</td>
+                        <td>@Html.DisplayFor(Model => item.Nome)</td>
+                        <td>@Html.DisplayFor(Model => item.Medida)</td>
+                        <td>@Html.DisplayFor(Model => item.Cor)</td>
+                        <td>@Html.DisplayFor(Model => item.Valor)</td>
+                        <td>@Html.DisplayFor(Model => item.Descricao)</td>
+                        <td>@Html.DisplayFor(Model => item.Quantidade)</td>
+                        <td scope="col"><a class="btn btn-primary" asp-controller="Admin" asp-action="Editar" asp-route-id="@item.Id"><i class="fa fa-pencil-square-o" aria-hidden="true" alt="Editar"></i></a></td>
+                        <td scope="col"><a class="btn btn-danger" asp-controller="Fechadura" asp-action="Excluir" asp-route-id="@item.Id"><i class="fa fa-ban" aria-hidden="true"></i></a></td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
 </body>

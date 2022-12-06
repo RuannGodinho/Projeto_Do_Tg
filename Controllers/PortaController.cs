@@ -22,5 +22,54 @@ namespace MVC.Controllers
             var portas = _context.Portas.ToList();
             return View(portas);
         }
+
+        [HttpPost]
+        public IActionResult AdicionarPorta(Porta porta)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Portas.Add(porta);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+        }
+
+        public IActionResult Editar(long id)
+        {
+            var porta = _context.Portas.Find(id);
+
+            if(porta == null)
+                return RedirectToAction(nameof(Index));
+
+            return View(porta);
+        }
+
+        [HttpPost]
+        public IActionResult EditarPorta(Porta porta)
+        {
+            var portaBanco = _context.Portas.Find(porta.Id);
+
+            portaBanco.Nome = porta.Nome;
+            portaBanco.Descricao = porta.Descricao;
+            portaBanco.Quantidade = porta.Quantidade;
+            portaBanco.Valor = porta.Valor;
+
+            _context.Portas.Update(portaBanco);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        public IActionResult Excluir(int Id)
+        {
+            var portaBanco = _context.Portas.Find(Id);
+
+            _context.Portas.Remove(portaBanco);
+            _context.SaveChanges();
+
+            return RedirectToAction("Fechadura", "Admin");
+        }
     }
 }

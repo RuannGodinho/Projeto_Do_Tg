@@ -24,6 +24,18 @@ namespace MVC.Controllers
 
             return View(janelas);
         }
+
+        [HttpPost]
+        public IActionResult AdicionarJanela(Janela janela)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Janelas.Add(janela);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+        }
         
     }
 }

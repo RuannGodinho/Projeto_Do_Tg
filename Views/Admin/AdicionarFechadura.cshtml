@@ -1,7 +1,7 @@
+@model MVC.Models.Fechadura;
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-
 @{
-    ViewData["Title"] = "Admin Page";
+    ViewData["Title"] = "Admin Page - Fechadura";
     Layout = null;
 }
 <head>
@@ -16,10 +16,23 @@
     <style>
         .jumbotron
         {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 2%;
+            background-color: rgba(70, 43, 14, 0.8);
+            border-radius: 10px;
+            border-color: white;
+            border-style: solid;
+            border-width: 2px;
             width: auto;
             height: 100%;
+            color: white;
+        }
+        
+        table
+        {
+            border-bottom: 1px solid white;
+        }
+        td
+        {
+            color: White;
         }
     </style>
 </head>
@@ -71,13 +84,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Contatos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Porta">Portas</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Portas">Portas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Janela">Janelas</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Janelas">Janelas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Fechadura">Fechaduras</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Fechaduras">Fechaduras</a>
                         </li>
                     </ul>
                 </div>                   
@@ -87,7 +100,36 @@
 
     <div class="container">
         <div class="jumbotron">
-            <header><center><h1>Bem vindo Administrador</h1></center></header>
+            <form asp-controller="Fechadura" asp-action="AdicionarFechadura" method="post">
+                <div class="form-group">
+                  <label>Nome Item: </label>
+                  <input type="text" class="form-control" asp-for="Nome">
+                </div>
+
+                <div class="form-group">
+                  <label>Descrição do Item: </label>
+                  <input type="text" class="form-control" asp-for="Descricao">
+                </div>
+
+                <div class="form-group">
+                  <label>Estoque: </label>
+                  <input type="number" class="form-control" asp-for="Quantidade">
+                </div>
+
+                <div class="form-group">
+                  <label>Preço do Item: </label>
+                  <input type="number" class="form-control" asp-for="Valor">
+                </div>
+
+                <div class="form-group">
+                  <label>Tipo do cômodo: </label>
+                  <input type="text" class="form-control" asp-for="TipoComodo">
+                </div>
+
+
+                <button asp-controller="Admin" asp-action="Fechadura" class="btn btn-danger" style="margin-top: 5px;">Voltar</button>
+                <button type="submit" class="btn btn-primary" style="margin-top: 5px;">Cadastrar</button>
+            </form>
         </div>
     </div>
 </body>

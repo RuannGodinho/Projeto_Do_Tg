@@ -5,11 +5,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MVC.Context;
 
 namespace Projeto_MVC_TG.Controllers
 {
     public class AdminController : Controller
     {
+        private readonly AgendaContext _context;
+
+        public AdminController(AgendaContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -17,17 +25,20 @@ namespace Projeto_MVC_TG.Controllers
 
         public IActionResult Fechadura()
         {
-            return View();
+            var Itens = _context.Fechaduras.ToList();
+            return View(Itens);
         }
 
         public IActionResult Janela()
         {
-            return View();
+            var Itens = _context.Janelas.ToList();
+            return View(Itens);
         }
 
         public IActionResult Porta()
         {
-            return View();
+            var Itens = _context.Portas.ToList();
+            return View(Itens);
         }
 
         public IActionResult AdicionarPorta()
@@ -40,7 +51,12 @@ namespace Projeto_MVC_TG.Controllers
             return View();
         }
 
-        public IActionResult ExcluirPorta()
+        public IActionResult AdicionarFechadura()
+        {
+            return View();
+        }
+
+        public IActionResult AdicionarJanela()
         {
             return View();
         }

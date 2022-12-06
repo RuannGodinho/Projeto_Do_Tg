@@ -51,7 +51,7 @@
                     <td scope="col">@item.descricao</td>
                     <td scope="col">@item.qtdPedido</td>
                     <td scope="col">@item.precoPedido</td>
-                    <td scope="col"><a class="btn btn-primary">Editar</a></td>
+                    <td scope="col"><a class="btn btn-primary" asp-controller="Carrinho" asp-action="Editar" asp-route-id="@item.Id"><i class="fa fa-pencil-square-o" aria-hidden="true" alt="Editar"></i></a></td>
                     <td scope="col"><a class="btn btn-danger" onclick="cancelaItem(@item.Id)">Cancelar</a></td>
                 </tr>
                 }

@@ -16328,6 +16328,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Admin\\EditarFechadura.cshtml",
+      "TargetPath": "Views\\Admin\\EditarFechadura.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Admin\\Janela.cshtml",
+      "TargetPath": "Views\\Admin\\Janela.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Contato\\Criar.cshtml",
       "TargetPath": "Views\\Contato\\Criar.cshtml",
       "FileKind": "mvc"
@@ -16358,6 +16368,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Admin\\Fechadura.cshtml",
+      "TargetPath": "Views\\Admin\\Fechadura.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Contato\\Detalhes.cshtml",
       "TargetPath": "Views\\Contato\\Detalhes.cshtml",
       "FileKind": "mvc"
@@ -16365,6 +16380,21 @@
     {
       "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Usuario\\Index.cshtml",
       "TargetPath": "Views\\Usuario\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Carrinho\\Cancelar.cshtml",
+      "TargetPath": "Views\\Carrinho\\Cancelar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Admin\\AdicionarFechadura.cshtml",
+      "TargetPath": "Views\\Admin\\AdicionarFechadura.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Admin\\AdicionarJanela.cshtml",
+      "TargetPath": "Views\\Admin\\AdicionarJanela.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16403,8 +16433,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Carrinho\\Editar.cshtml",
+      "TargetPath": "Views\\Carrinho\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Ruann\\Documents\\Projeto_Do_Tg\\Views\\Carrinho\\Adicionar.cshtml",
+      "TargetPath": "Views\\Carrinho\\Adicionar.cshtml",
       "FileKind": "mvc"
     },
     {

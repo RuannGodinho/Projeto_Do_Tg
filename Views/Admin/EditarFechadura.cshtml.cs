@@ -8,11 +8,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Projeto_Do_Tg.Views.Admin
 {
-    public class Porta : PageModel
+    public class EditarFechadura : PageModel
     {
-        private readonly ILogger<Porta> _logger;
+        private readonly ILogger<EditarFechadura> _logger;
 
-        public Porta(ILogger<Porta> logger)
+        public EditarFechadura(ILogger<EditarFechadura> logger)
         {
             _logger = logger;
         }
