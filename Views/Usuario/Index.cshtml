@@ -30,7 +30,7 @@
                 <input type="password" asp-for="senha" placeholder="Senha"><br><br>
                 @Html.ValidationMessageFor(x => x.senha)
 
-                <button type="submit">Entrar</button>
+                <a class="botao" asp-controller="Usuario" asp-action="Entrar">Entrar</a>
 
 
     </div><br>

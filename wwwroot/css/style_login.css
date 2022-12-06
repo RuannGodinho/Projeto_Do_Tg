@@ -71,3 +71,22 @@ body{
         text-decoration: underline;
         cursor: pointer;
     }
+
+    a {
+        background-color: #00E038;
+        padding: 15px;
+        width: 200px;
+        border-radius: 10px;
+        color: black;
+        font-size: 12pt;
+        font-family: 'Trykker';
+        text-decoration: none;
+        margin: auto;
+        display: block;
+        text-align: center;
+    }
+a:hover{
+        font-weight: bold;
+        background-color: #BBF547;
+        color: black;
+    }

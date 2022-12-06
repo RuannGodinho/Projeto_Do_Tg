@@ -39,12 +39,12 @@
                 <img src="~/css/QrCode.jpg" class="QrCode">
 
                 <tr>
-                    <td>@Model.qtdPedido</td>
+                    <td>R$ @Model.qtdPedido,00</td>
                 </tr>
             </tbody>
             <tfoot>
-                <tr>
-                    <td colspan="11"><a class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Para comprar escaneie o Qr Code e pague o valor informado" onclick="comprarItem(@totalPagar)">Comprar</a></td>
+                <tr>                   
+                    <td disabled colspan="11"><a class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Para comprar escaneie o Qr Code e pague o valor informado" onclick="comprarItem(@totalPagar)">Obrigado por Comprar</a></td>
                 </tr>
             </tfoot>
         </table>
