@@ -35,6 +35,10 @@
 
             else if(item.Id == 3)
                 classeQtd = "campoQuantidade3";
+            
+            else if(item.Id == 4)
+                classeQtd = "campoQuantidade4";
+
 
 
         <div class="card" id="card_carrinhos">
@@ -62,15 +66,19 @@
             <div class="card__right">
                 @if(item.Id == 1)
                 {
-                    <a><img class="Imagem_Porta" src="~/css/Porta.jpeg" width="200px"></a>
+                    <a><img class="Imagem_Porta" src="~/css/brise.png" width="200px"></a>
                 }
                 else if(item.Id == 2)
                 {
-                    <a><img class="Imagem_Porta" src="~/css/PortaNigga.jpeg" width=></a>                    
+                    <a><img class="Imagem_Porta" src="~/css/pergolado.png" width="200px"></a>                    
                 }
                 else if(item.Id == 3)
                 {
-                   <a><img class="Imagem_Porta" src="~/css/PortaMacica.jpeg" width="200px"></a> 
+                   <a><img class="Imagem_Porta" src="~/css/banheira.png" width="200px"></a> 
+                }
+                else if(item.Id == 4)
+                {
+                   <a><img class="Imagem_Porta" src="~/css/cadeira.png" width="200px"></a> 
                 }
 
             </div>
@@ -84,8 +92,8 @@
 
 <script>
     function troca_src(idProduto){
-        var tipoTabela = 1;
-        var qtdProdutos = idProduto == 1 ? $(".campoQuantidade").val() : idProduto == 2 ? $(".campoQuantidade2").val() : $(".campoQuantidade3").val();
+        var tipoTabela = 5;
+        var qtdProdutos = idProduto == 1 ? $(".campoQuantidade").val() : idProduto == 2 ? $(".campoQuantidade2").val() : idProduto == 3 ? $(".campoQuantidade3").val() : $(".campoQuantidade4").val();
 
     $.ajax({
         url:"/Carrinho/SalvarNoCarrinho",

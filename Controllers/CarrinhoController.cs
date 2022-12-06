@@ -48,6 +48,78 @@ namespace MVC.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
+            if(tipoTabela == (int)ETipoTabela.Guarnicao)
+            {
+                var guarnicao = _context.Guarnicao.Where(_ => _.Id == idProduto).FirstOrDefault();
+
+                var carrinho = new Models.Carrinho{
+                    nomePedido = guarnicao.Nome,
+                    descricao = guarnicao.Descricao,
+                    qtdPedido = qtdProdutos,
+                    precoPedido = guarnicao.Preco,
+                    idUsuario = 232
+                };
+
+                _context.Carrinho.Add(carrinho);
+                _context.SaveChanges();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            if(tipoTabela == (int)ETipoTabela.Janela)
+            {
+                var janela = _context.Janelas.Where(_ => _.Id == idProduto).FirstOrDefault();
+
+                var carrinho = new Models.Carrinho{
+                    nomePedido = janela.Nome,
+                    descricao = janela.Descricao,
+                    qtdPedido = qtdProdutos,
+                    precoPedido = janela.Valor,
+                    idUsuario = 232
+                };
+
+                _context.Carrinho.Add(carrinho);
+                _context.SaveChanges();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            if(tipoTabela == (int)ETipoTabela.Fechadura)
+            {
+                var fechadura = _context.Fechaduras.Where(_ => _.Id == idProduto).FirstOrDefault();
+
+                var carrinho = new Models.Carrinho{
+                    nomePedido = fechadura.Nome,
+                    descricao = fechadura.Descricao,
+                    qtdPedido = qtdProdutos,
+                    precoPedido = fechadura.Valor,
+                    idUsuario = 232
+                };
+
+                _context.Carrinho.Add(carrinho);
+                _context.SaveChanges();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            if(tipoTabela == (int)ETipoTabela.Outros)
+            {
+                var outros = _context.Outros.Where(_ => _.Id == idProduto).FirstOrDefault();
+
+                var carrinho = new Models.Carrinho{
+                    nomePedido = outros.Nome,
+                    descricao = outros.Descricao,
+                    qtdPedido = qtdProdutos,
+                    precoPedido = outros.Valor,
+                    idUsuario = 232
+                };
+
+                _context.Carrinho.Add(carrinho);
+                _context.SaveChanges();
+
+                return RedirectToAction(nameof(Index));
+            }
+
             
 
             return View();

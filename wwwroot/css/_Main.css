@@ -94,7 +94,7 @@ footer {
     display: flex;
     flex-direction: row;
     width: 45%;
-    border: solid 3px #004C40;
+    border: solid 6px #004C40;
 }
 
 .card__left{
