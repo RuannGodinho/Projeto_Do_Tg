@@ -1,7 +1,7 @@
-@model IEnumerable<MVC.Models.Porta>;
+@model MVC.Models.Fechadura;
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
-    ViewData["Title"] = "Admin Page - Porta";
+    ViewData["Title"] = "Admin Page - Fechadura";
     Layout = null;
 }
 <head>
@@ -23,6 +23,7 @@
             border-width: 2px;
             width: auto;
             height: 100%;
+            color: white;
         }
         
         table
@@ -84,13 +85,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Contatos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Porta">Portas</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Portas">Portas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Janela">Janelas</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Janelas">Janelas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Fechadura">Fechaduras</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Fechaduras">Fechaduras</a>
                         </li>
                     </ul>
                 </div>                   
@@ -99,41 +100,46 @@
     </header>
 
     <div class="container">
-        <a class="btn btn-primary" style="float: right;margin-top: 5px;margin-right: 5px;" asp-controller="admin" asp-action="AdicionarPorta">Adicionar</a>
         <div class="jumbotron">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <td>Id</td>
-                        <td>Nome</td>
-                        <td>Medida</td>
-                        <td>Cor</td>
-                        <td>Preço</td>
-                        <td>Descrição</td>
-                        <td>Tipo</td>
-                        <td>Estoque</td>
-                        <td>Editar</td>
-                        <td>Excluir</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                    <tr>
-                        <td>@Html.DisplayFor(Model => item.Id)</td>
-                        <td>@Html.DisplayFor(Model => item.Nome)</td>
-                        <td>@Html.DisplayFor(Model => item.Medida)</td>
-                        <td>@Html.DisplayFor(Model => item.Cor)</td>
-                        <td>@Html.DisplayFor(Model => item.Preco)</td>
-                        <td>@Html.DisplayFor(Model => item.Descricao)</td>
-                        <td>@Html.DisplayFor(Model => item.Tipo)</td>
-                        <td>@Html.DisplayFor(Model => item.Quantidade)</td>
-                        <td scope="col"><a class="btn btn-primary" asp-controller="Admin" asp-action="Editar" asp-route-id="@item.Id"><i class="fa fa-pencil-square-o" aria-hidden="true" alt="Editar"></i></a></td>
-                        <td scope="col"><a class="btn btn-danger" asp-controller="Porta" asp-action="Excluir" asp-route-id="@item.Id"><i class="fa fa-ban" aria-hidden="true"></i></a></td>
-                    </tr>
-                    }
-                </tbody>
-            </table>
+            <form asp-controller="Fechadura" asp-action="EditarFechadura" method="post">
+                <div class="form-group">
+                  <label>Nome Item: </label>
+                  <input type="text" class="form-control" asp-for="Nome">
+                </div>
+        
+                <div class="form-group">
+                  <label>Descrição do Item: </label>
+                  <input type="text" class="form-control" asp-for="Descricao">
+                </div>
+        
+                <div class="form-group">
+                  <label>Estoque: </label>
+                  <input type="number" class="form-control" asp-for="Quantidade">
+                </div>
+        
+                <div class="form-group">
+                  <label>Preço do Item: </label>
+                  <input type="number" class="form-control" asp-for="Valor">
+                </div>
+
+                <div class="form-group">
+                  <label>Tipo do Item: </label>
+                  <input type="text" class="form-control" asp-for="Tipo">
+                </div>
+
+                <div class="form-group">
+                  <label>Tipo do cômodo: </label>
+                  <input type="text" class="form-control" asp-for="TipoComodo">
+                </div>
+
+                <div class="form-group">
+                  <label>Cor do Item: </label>
+                  <input type="text" class="form-control" asp-for="Cor">
+                </div>
+        
+                <button asp-controller="Admin" asp-action="Fechadura" class="btn btn-danger" style="margin-top: 5px;">Voltar</button>
+                <button type="submit" class="btn btn-primary" style="margin-top: 5px;">Alterar</button>
+            </form>
         </div>
     </div>
 </body>

@@ -4,7 +4,7 @@
 
 namespace MVC.Migrations
 {
-    public partial class TabelaGuarnicaoOutrosNova : Migration
+    public partial class RGREcommerce : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

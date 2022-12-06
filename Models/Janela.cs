@@ -14,6 +14,7 @@ namespace MVC.Models
         public int Quantidade { get; set; }
         public decimal Valor { get; set; }
         public string Descricao { get; set; }
-        public bool EmCarrinho { get; set; }
+        public int QtdFolhas { get; set;}
+        public string UrlFoto { get; set;}
     }
 }

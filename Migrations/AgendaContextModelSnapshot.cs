@@ -17,7 +17,7 @@ namespace MVC.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.8")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -33,17 +33,14 @@ namespace MVC.Migrations
                     b.Property<string>("descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("idPedido")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<long>("idUsuario")
                         .HasColumnType("bigint");
 
                     b.Property<string>("nomePedido")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("precoPedido")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("precoPedido")
+                        .HasColumnType("float");
 
                     b.Property<int>("qtdPedido")
                         .HasColumnType("int");
@@ -83,14 +80,14 @@ namespace MVC.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("Acabamento")
-                        .HasColumnType("int");
+                    b.Property<string>("Cor")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("EmCarrinho")
-                        .HasColumnType("bit");
+                    b.Property<int>("Medida")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
@@ -98,7 +95,13 @@ namespace MVC.Migrations
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
+                    b.Property<string>("Tipo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("TipoComodo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UrlFoto")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Valor")
@@ -166,17 +169,20 @@ namespace MVC.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("EmCarrinho")
-                        .HasColumnType("bit");
-
                     b.Property<int>("Medida")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("QtdFolhas")
+                        .HasColumnType("int");
+
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
+
+                    b.Property<string>("UrlFoto")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Valor")
                         .HasColumnType("decimal(18,2)");
@@ -237,23 +243,23 @@ namespace MVC.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("EmCarrinho")
-                        .HasColumnType("bit");
-
                     b.Property<int>("Medida")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
-                    b.Property<string>("UrlFoto")
+                    b.Property<string>("Tipo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Valor")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("UrlFoto")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
