@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MVC.Models;
-using MVC.Context;
 using Microsoft.Extensions.Logging;
+using MVC.Context;
+using Projeto_Do_Tg.Enums;
 
 namespace MVC.Controllers
 {    public class CarrinhoController : Controller
@@ -17,74 +17,65 @@ namespace MVC.Controllers
         {
             _context = context;
         }
+
         public IActionResult Index()
         {
-            var Itens = _context.Carrinho.ToList();
-            return View(Itens);
-        }
+            var result = _context.Carrinho.ToList();
 
-        public IActionResult Adicionar()
-        {
+            if(result.Count > 0)
+                return View(result);
+
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Adicionar(Carrinho carrinho)
+        public IActionResult SalvarNoCarrinho(int idProduto, int tipoTabela, int qtdProdutos)
         {
-            if(ModelState.IsValid)
+            if(tipoTabela == (int)ETipoTabela.Porta)
             {
+                var porta = _context.Portas.Where(_ => _.Id == idProduto).FirstOrDefault();
+
+                var carrinho = new Models.Carrinho{
+                    nomePedido = porta.Nome,
+                    descricao = porta.Descricao,
+                    qtdPedido = qtdProdutos,
+                    precoPedido = porta.Valor,
+                    idUsuario = 232
+                };
+
                 _context.Carrinho.Add(carrinho);
                 _context.SaveChanges();
+
                 return RedirectToAction(nameof(Index));
             }
-            return View(carrinho);
-        }
 
-        public IActionResult Editar(long id)
-        {
-            var carrinho = _context.Carrinho.Find(id);
-
-            if(carrinho == null)
-                return RedirectToAction(nameof(Index));
             
-            return View(carrinho);
+
+            return View();
         }
 
-        [HttpPost]
-        public IActionResult Alterar(Carrinho carrinho)
+        public IActionResult Deletar(int idProduto)
         {
-            var carrinhoBanco = _context.Carrinho.Find(carrinho.Id);
+            var carrinho = _context.Carrinho.Where(_ => _.Id == idProduto);
 
-            carrinhoBanco.nomePedido = carrinho.nomePedido;
-            carrinhoBanco.descricao = carrinho.descricao;
-            carrinhoBanco.qtdPedido = carrinho.qtdPedido;
-            carrinhoBanco.precoPedido = carrinho.precoPedido;
+            if(carrinho != null)
+            {
+                _context.Carrinho.RemoveRange(carrinho);
+                _context.SaveChanges();
+            }
 
-            _context.Carrinho.Update(carrinhoBanco);
-            _context.SaveChanges();
-
+            else
+                throw new InvalidOperationException("Não foi possivel deletar o produto");
+            
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Cancelar(long id)
+        public IActionResult Comprar(int totalPagar)
         {
-            var carrinho = _context.Carrinho.Find(id);
+            var pedido = new Models.Carrinho{
+                qtdPedido = totalPagar
+            };
 
-            if(carrinho == null)
-                return RedirectToAction(nameof(Index));
-            
-            return View(carrinho);
-        }
-
-        [HttpPost]
-        public IActionResult Deletar(long id)
-        {
-            var carrinhoBanco = _context.Carrinho.Find(id);
-
-            _context.Carrinho.Remove(carrinhoBanco);
-            _context.SaveChanges();
-
-            return RedirectToAction(nameof(Index));
+            return View(pedido);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

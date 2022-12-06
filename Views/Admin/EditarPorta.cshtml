@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RGR</title>
-    
+
     <link rel="stylesheet" href="../css/_Main.css"/> 
     <link rel="stylesheet" href="~/MVC.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -29,7 +29,6 @@
         {
             border-bottom: 1px solid white;
         }
-
         td
         {
             color: White;
@@ -41,7 +40,7 @@
 <body>
     <header>
         <div id="icones">
-                    
+
                     <a asp-controller="Usuario" asp-action="Index"><i class="fa-solid fa-user fa-3x" id="usuarioIcon"></i></a>
                     <a asp-controller="Carrinho" asp-action="Index"><i class="fa-solid fa-cart-shopping fa-3x" id="carrinhoIcon"></i></a>
                 </div>
@@ -50,11 +49,11 @@
                     <input class="barra" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit" id="botao-busca">Search</button> 
 
-                    
+
                 </form>
 
         <div class="container">
-                
+
 
         </div>
 
@@ -64,10 +63,10 @@
 
 
         <div class="container">
-           
+
         </div>
-             
-                  
+
+
         <nav class="navbar navbar-expand-sm  navbar-light  mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RGR</a>
@@ -105,22 +104,22 @@
                   <label>Nome Item: </label>
                   <input type="text" class="form-control" asp-for="Nome">
                 </div>
-        
+
                 <div class="form-group">
                   <label>Descrição do Item: </label>
                   <input type="text" class="form-control" asp-for="Descricao">
                 </div>
-        
+
                 <div class="form-group">
                   <label>Estoque: </label>
                   <input type="number" class="form-control" asp-for="Quantidade">
                 </div>
-        
+
                 <div class="form-group">
                   <label>Preço do Item: </label>
-                  <input type="text" class="form-control" asp-for="Preco">
+                  <input type="text" class="form-control" asp-for="Valor">
                 </div>
-        
+
                 <button asp-controller="Admin" asp-action="Index" class="btn btn-danger" style="margin-top: 5px;">Voltar</button>
                 <button type="submit" class="btn btn-primary" style="margin-top: 5px;">Alterar</button>
             </form>
