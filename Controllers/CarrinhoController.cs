@@ -125,6 +125,16 @@ namespace MVC.Controllers
             return View();
         }
 
+        public IActionResult Editar(long id)
+        {
+            var carrinho = _context.Carrinho.Find(id);
+
+            if(carrinho == null)
+                return RedirectToAction(nameof(Index));
+
+            return View(carrinho);
+        }
+
         public IActionResult Deletar(int idProduto)
         {
             var carrinho = _context.Carrinho.Where(_ => _.Id == idProduto);
